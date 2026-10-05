@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Sip & Chill</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site-extra.css">
+</head>
+<body id="pageBody" class="menu-page">
+
+    <canvas id="snowCanvas"></canvas>
+
+    <header>
+        <div class="logo">🥤 Sip & Chill</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="menu.html" class="dropdown-trigger">Menu</a>
+                <div class="dropdown-menu">
+                    <a href="milkshake.html">Milkshake</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="about.html" class="dropdown-trigger">About</a>
+                <div class="dropdown-menu">
+                    <a href="about.html#about-us">About Us</a>
+                    <a href="about.html#team">Team</a>
+                    <a href="about.html#restaurant">Restaurant</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="vlog.html" class="dropdown-trigger">Vlog</a>
+                <div class="dropdown-menu">
+                    <a href="vlog.html#pictures">Pictures</a>
+                    <a href="vlog.html#videos">Videos</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+            <a href="checkout.html" class="cart-link" aria-label="View cart">
+                🛒 Cart<span id="cartBadge" class="cart-badge">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="page-wrap">
+
+        <div class="page-header">
+            <span class="tag">We'd Love To Hear From You</span>
+            <h1>Contact Us</h1>
+            <p class="lead">Questions, orders, or just want to say hi? Reach us on WhatsApp, drop us an email, or come find us in Midrand.</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="panel">
+                <h2 class="section-heading">Get In Touch</h2>
+                <ul class="info-list">
+                    <li>
+                        <span class="icon">📍</span>
+                        <span>51 Peulwane Street<br>Midrand, South Africa</span>
+                    </li>
+                    <li>
+                        <span class="icon">📞</span>
+                        <span>Call or WhatsApp:<br><a href="tel:+27674845944">067 484 5944</a></span>
+                    </li>
+                    <li>
+                        <span class="icon">✉️</span>
+                        <span>Email:<br><a href="mailto:blessingport47@gmail.com">blessingport47@gmail.com</a></span>
+                    </li>
+                </ul>
+
+                <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:24px;">
+                    <a id="waContactBtn" href="#" target="_blank" rel="noopener" class="btn-whatsapp">
+                        <svg width="20" height="20" viewBox="0 0 32 32" fill="#ffffff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.607 1.912 6.472L4 29l7.727-1.877A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.363l-.358-.213-4.586 1.114 1.13-4.47-.234-.367A9.78 9.78 0 0 1 6.182 15c0-5.417 4.402-9.818 9.819-9.818S25.818 9.583 25.818 15 21.418 24.818 16.001 24.818zm5.4-7.34c-.296-.148-1.75-.864-2.022-.963-.271-.099-.469-.148-.667.148-.198.297-.767.963-.94 1.161-.173.198-.346.223-.642.075-.296-.148-1.249-.46-2.379-1.468-.879-.784-1.472-1.752-1.645-2.049-.173-.297-.018-.457.13-.605.134-.133.297-.346.445-.52.148-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51-.173-.008-.371-.01-.569-.01a1.09 1.09 0 0 0-.792.371c-.272.297-1.04 1.016-1.04 2.476s1.065 2.872 1.213 3.07c.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.695.626.712.227 1.36.195 1.873.118.571-.085 1.75-.716 1.997-1.408.247-.692.247-1.285.173-1.408-.074-.124-.272-.198-.568-.346z"/></svg>
+                        Chat on WhatsApp
+                    </a>
+                    <a href="checkout.html" class="btn-solid">🛒 Go to Checkout</a>
+                </div>
+
+                <h2 class="section-heading" style="margin-top:36px;">Find Us</h2>
+                <iframe class="map-embed" height="260" loading="lazy" allowfullscreen
+                    src="https://www.google.com/maps?q=51+Peulwane+Street,+Midrand,+South+Africa&output=embed">
+                </iframe>
+                <div style="margin-top:14px;">
+                    <a class="btn-outline" href="https://www.google.com/maps/dir/?api=1&destination=51+Peulwane+Street,+Midrand,+South+Africa" target="_blank" rel="noopener">📍 Get Directions</a>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2 class="section-heading">Send Us A Message</h2>
+                <p style="margin-bottom:20px;">Fill this in and it'll land straight in our inbox — we usually reply within a few hours.</p>
+
+                <form action="https://formsubmit.co/blessingport47@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New message from Sip & Chill website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div class="form-field">
+                        <label for="cName">Full Name</label>
+                        <input type="text" id="cName" name="Name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="cEmail">Email</label>
+                            <input type="email" id="cEmail" name="Email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="cPhone">Phone</label>
+                            <input type="tel" id="cPhone" name="Phone" placeholder="0XX XXX XXXX">
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="cMsg">Message</label>
+                        <textarea id="cMsg" name="Message" rows="5" placeholder="How can we help?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-solid" style="width:100%;">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sip & Chill — Premium Drinks Experience</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <div id="cartToast" class="cart-toast"></div>
+    <a class="whatsapp-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 32 32" fill="#ffffff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.607 1.912 6.472L4 29l7.727-1.877A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.363l-.358-.213-4.586 1.114 1.13-4.47-.234-.367A9.78 9.78 0 0 1 6.182 15c0-5.417 4.402-9.818 9.819-9.818S25.818 9.583 25.818 15 21.418 24.818 16.001 24.818zm5.4-7.34c-.296-.148-1.75-.864-2.022-.963-.271-.099-.469-.148-.667.148-.198.297-.767.963-.94 1.161-.173.198-.346.223-.642.075-.296-.148-1.249-.46-2.379-1.468-.879-.784-1.472-1.752-1.645-2.049-.173-.297-.018-.457.13-.605.134-.133.297-.346.445-.52.148-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51-.173-.008-.371-.01-.569-.01a1.09 1.09 0 0 0-.792.371c-.272.297-1.04 1.016-1.04 2.476s1.065 2.872 1.213 3.07c.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.695.626.712.227 1.36.195 1.873.118.571-.085 1.75-.716 1.997-1.408.247-.692.247-1.285.173-1.408-.074-.124-.272-.198-.568-.346z"/></svg>
+    </a>
+    <script>
+        document.getElementById('waFloat').href = whatsappGeneralLink();
+        document.getElementById('waContactBtn').href = whatsappGeneralLink();
+    </script>
+
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let sw = canvas.width = window.innerWidth;
+        let sh = canvas.height = window.innerHeight;
+        const totalStars = 45;
+        const starsArray = [];
+
+        window.addEventListener('resize', () => {
+            sw = canvas.width = window.innerWidth;
+            sh = canvas.height = window.innerHeight;
+        });
+
+        for (let i = 0; i < totalStars; i++) {
+            starsArray.push({
+                x: Math.random() * sw,
+                y: Math.random() * sh,
+                outerRadius: Math.random() * 6 + 4,
+                innerRadius: Math.random() * 2 + 1,
+                points: i % 2 === 0 ? 4 : 6,
+                speedY: Math.random() * 0.8 + 0.4,
+                opacity: Math.random() * 0.5 + 0.2,
+                swingSpeed: Math.random() * 0.02,
+                swingRange: Math.random() * 0.8
+            });
+        }
+
+        function drawIceStar(cx, cy, spikes, outerRadius, innerRadius, alpha) {
+            let rot = Math.PI / 2 * 3;
+            let x = cx;
+            let y = cy;
+            let step = Math.PI / spikes;
+
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - outerRadius);
+
+            for (let i = 0; i < spikes; i++) {
+                x = cx + Math.cos(rot) * outerRadius;
+                y = cy + Math.sin(rot) * outerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+
+                x = cx + Math.cos(rot) * innerRadius;
+                y = cy + Math.sin(rot) * innerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+            }
+
+            ctx.lineTo(cx, cy - outerRadius);
+            ctx.closePath();
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            ctx.fill();
+        }
+
+        let runAngle = 0;
+        function renderIceSnow() {
+            ctx.clearRect(0, 0, sw, sh);
+            runAngle += 0.005;
+
+            for (let i = 0; i < totalStars; i++) {
+                const s = starsArray[i];
+                drawIceStar(s.x, s.y, s.points, s.outerRadius, s.innerRadius, s.opacity);
+                s.y += s.speedY;
+                s.x += Math.sin(runAngle + s.swingRange) * 0.3;
+
+                if (s.y > sh) {
+                    starsArray[i] = {
+                        x: Math.random() * sw,
+                        y: -15,
+                        outerRadius: s.outerRadius,
+                        innerRadius: s.innerRadius,
+                        points: s.points,
+                        speedY: s.speedY,
+                        opacity: s.opacity,
+                        swingSpeed: s.swingSpeed,
+                        swingRange: s.swingRange
+                    };
+                }
+            }
+            requestAnimationFrame(renderIceSnow);
+        }
+        renderIceSnow();
+    </script>
+</body>
+</html>

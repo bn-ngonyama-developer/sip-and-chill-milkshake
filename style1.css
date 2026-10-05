@@ -1,0 +1,321 @@
+/* ==========================================================================
+   1. GLOBAL RESETS & BRAND TYPOGRAPHY
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    transition: background 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* ==========================================================================
+   2. HEADER & UPGRADED NAVIGATION DROPDOWNS
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px 20px 100px; 
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', CURSIVE;
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;   /* Clean White */
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+nav a, .dropdown-trigger {
+    text-decoration: none;
+    font-size: 17px;    
+    font-weight: 700; 
+    color: #ffffff;   /* Clean White Nav Links */
+    opacity: 0.95;
+    cursor: pointer;
+    position: relative; 
+    padding: 6px 0;
+    transition: opacity 0.2s ease;
+}
+
+nav a::after, .dropdown-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #ffffff; /* White Underline */
+    transform: scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+nav a:hover::after, .dropdown-trigger:hover::after {
+    transform: scaleX(1); 
+}
+
+.dropdown-menu a::after {
+    display: none !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff; /* White Dropdown Card Box background */
+    min-width: 160px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 12px 0;
+    z-index: 200;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.dropdown-menu a {
+    color: #17172b !important; /* Deep Cocoa Brown dropdown internal links */
+    padding: 10px 24px;
+    display: block;
+    font-size: 16px;    
+    font-weight: 600;
+    opacity: 0.9;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    opacity: 1;
+    padding-left: 28px; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================================================
+   3. MENU PAGE LAYOUT GRID & DESIGN CONFIGURATIONS
+   ========================================================================== */
+.menu-page {
+    /* Rich Red and Deep Brown Wallpaper Gradient Scheme */
+    background: linear-gradient(135deg, #c19770 0%, #bc987e 50%, #b38b6d 100%);
+    overflow-y: auto !important; 
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 80px 40px;
+    z-index: 5;
+    position: relative;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 14px;    
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px; 
+    background-color: #c19770; /* Vibrant Crimson Red Tag Background */
+    color: #ffffff;            /* White Text */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu-header h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 84px; 
+    font-weight: 700;
+    line-height: 1.0;
+    color: #ffffff; /* Elegant White Heading */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* Grid Layout Array Box Engine */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 40px 30px;
+}
+
+/* Frosted Glass Display Cards */
+.menu-card {
+    background: rgba(255, 255, 255, 0.12); /* White Frosted Layer */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.card-img-holder {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-img-holder img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    mix-blend-mode: multiply;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .card-img-holder img {
+    transform: scale(1.08); 
+}
+
+.menu-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    color: #ffffff; /* Crisp White Title */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.menu-card p {
+    font-size: 16px; 
+    color: #ffffff; /* High contrast white description layout texts */
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex: 1; 
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.card-footer .price {
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff; /* Bright White Price */
+}
+
+/* Action button configuration */
+.add-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff; /* Crisp White Button Shape */
+    color: blue;            /* Rich Red Plus Sign symbol icon */
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+    background-color: #1d747a; /* Shifts to rich red color background on hover */
+    color: #ffffff;            /* Plus sign icon converts to clean white font */
+}
+
+/* Individual card background color masks when user cursor points over them */
+.color-peppermint:hover { background: rgba(255, 255, 255, 0.2); }
+.color-chocolate:hover  { background: rgba(43, 27, 23, 0.45); }  /* Deep Brown Accent */
+.color-caramel:hover    { background: rgba(198, 142, 90, 0.25); } 
+.color-raspberry:hover  { background: rgba(184, 67, 90, 0.3); }   /* Deep Berry Red Accent */
+.color-strawberry:hover { background: rgba(214, 48, 49, 0.3); }   /* Vibrant Strawberry Red Accent */
+
+/* ==========================================================================
+   4. ICE STAR SNOW CANVAS BACKGROUND OVERLAY
+   ========================================================================== */
+#snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+/* ==========================================================================
+   5. FOOTER STYLINGS
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
+    z-index: 5;
+}
+
+footer p {
+    font-size: 15px;    
+    opacity: 0.8;
+    margin: 0 auto;
+    color: #ffffff; /* Clean White Footer Text */
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Adaptive Layout for Screens & Tablets)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    header { padding: 30px 40px; }
+    .menu-container { padding: 20px; }
+    .menu-header h1 { font-size: 64px; }
+    .menu-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+}

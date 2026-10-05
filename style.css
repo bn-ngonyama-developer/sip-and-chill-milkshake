@@ -1,0 +1,508 @@
+/* ==========================================================================
+   1. GLOBAL RESETS & BRAND TYPOGRAPHY
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    transition: background 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* ==========================================================================
+   2. HEADER & UPGRADED NAVIGATION DROPDOWNS
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 60px 20px 100px; /* Restored normal spacing to protect header layout */
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', cursive;
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;   
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+nav a, .dropdown-trigger {
+    text-decoration: none;
+    font-size: 17px;    
+    font-weight: 700; 
+    color: #ffffff;   
+    opacity: 0.95;
+    cursor: pointer;
+    position: relative; 
+    padding: 6px 0;
+    transition: opacity 0.2s ease;
+}
+
+nav a::after, .dropdown-trigger::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: #ffffff; 
+    transform: scaleX(0); 
+    transform-origin: center; 
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+nav a:hover::after, .dropdown-trigger:hover::after {
+    transform: scaleX(1); 
+}
+
+.dropdown-menu a::after {
+    display: none !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 12px 0;
+    z-index: 200;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #ffffff transparent;
+}
+
+.dropdown-menu a {
+    color: #2b2b2b !important;
+    padding: 10px 24px;
+    display: block;
+    font-size: 16px;    
+    font-weight: 600;
+    opacity: 0.8;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    opacity: 1;
+    padding-left: 28px; 
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* ==========================================================================
+   3. HERO CONTENT SECTION (Protected Separation Engine)
+   ========================================================================== */
+.hero {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 100px 30px 100px; 
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    width: 500px;
+    position: relative; 
+    /* POSITION FIX: Replaced negative margin with a safe layout offset below your header */
+    margin-top: 40px; 
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 14px;    
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    /* GAP FIX: Compressed the empty space under the organic drinks tag label */
+    margin-bottom: 0px; 
+    color: #ffffff;
+}
+
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 84px; 
+    font-weight: 700;
+    line-height: 1.0; 
+    /* GAP FIX: Tighter lower spacing pulls description and button up inside the text column */
+    margin-bottom: 5px; 
+    letter-spacing: 0.5px;
+    color: #ffffff; 
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.anchored-text-fruit {
+    position: absolute;
+    /* FRUIT POSITION FIX: Adjusted to sit perfectly next to your lifted text layout */
+    top: 85px;         
+    left: 410px;        
+    width: 140px;       
+    height: auto;
+    z-index: 5;
+    mix-blend-mode: multiply; 
+    filter: contrast(1.05) brightness(1.02); 
+    pointer-events: none;
+    animation: textFloatEffect 4s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 19px;    
+    line-height: 1.5;
+    max-width: 420px;
+    color: #ffffff; 
+    opacity: 0.9;
+    /* GAP FIX: Cut paragraph space to pull the button upward safely */
+    margin-bottom: 15px; 
+}
+
+.btn {
+    color: white;
+    border: none;
+    padding: 12px 40px; 
+    font-size: 17px;    
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+@keyframes textFloatEffect {
+    0% { transform: translateY(0) rotate(5deg); }
+    100% { transform: translateY(-10px) rotate(15deg); }
+}
+
+/* ==========================================================================
+   4. NO-CROP VERTICAL CAROUSEL VIEWPORT
+   ========================================================================== */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.carousel-wrapper {
+    width: 480px; 
+    height: 580px; 
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: contain; 
+    object-position: right center;
+    mix-blend-mode: multiply; 
+    filter: contrast(1.05) brightness(1.02); 
+}
+
+/* ==========================================================================
+   5. CUSTOMER REVIEWS SECTION
+   ========================================================================== */
+.reviews {
+    background: #FFF8EF;
+    padding: 90px 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.reviews-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 50px auto;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #C68E5A;
+    margin-bottom: 12px;
+}
+
+.reviews-header h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #2B1B17;
+    text-shadow: none;
+}
+
+.reviews-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.review-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(43, 27, 23, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(43, 27, 23, 0.14);
+}
+
+.review-stars {
+    color: #C68E5A;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.review-quote {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4a372f;
+    opacity: 1;
+    max-width: none;
+    margin: 0;
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #f0e6da;
+}
+
+.review-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #2B1B17;
+}
+
+.review-order {
+    font-size: 13px;
+    color: #a68a75;
+}
+
+/* ==========================================================================
+   6. SITE FOOTER & CANVAS OBJECT LAYERS
+   ========================================================================== */
+.site-footer {
+    background: #2B1B17;
+    color: #ffffff;
+    padding: 70px 100px 0 100px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #ffffff;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d8c3b5;
+    opacity: 1;
+    max-width: 280px;
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: #C68E5A;
+    transform: translateY(-3px);
+}
+
+.footer-social svg {
+    width: 18px;
+    height: 18px;
+    fill: #ffffff;
+}
+
+.site-footer h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+.footer-links, .footer-visit, .footer-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a,
+.footer-visit p,
+.footer-contact p {
+    font-size: 14px;
+    color: #d8c3b5;
+    opacity: 1;
+    margin-bottom: 12px;
+    text-decoration: none;
+    max-width: none;
+}
+
+.footer-links a:hover {
+    color: #C68E5A;
+}
+
+.footer-contact a {
+    color: #d8c3b5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+    color: #C68E5A;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #a68a75;
+    opacity: 1;
+    max-width: none;
+    margin: 0 auto;
+}
+
+#snowCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none; 
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (Adaptive Layout for Screens & Tablets)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    header { padding: 30px 40px; }
+    .hero { padding: 40px; }
+    .hero-content { flex-direction: column-reverse; text-align: center; gap: 50px; }
+    .hero-text { width: 100%; margin-top: 0; }
+    .anchored-text-fruit { display: none; } 
+    h1 { font-size: 58px; }
+    p { margin: 0 auto 20px auto; }
+    .hero-image-container { justify-content: center; }
+    .hero-image { object-position: center center; }
+    .carousel-wrapper { width: 100%; max-width: 420px; height: 480px; }
+
+    .reviews { padding: 60px 40px; }
+    .reviews-header h2 { font-size: 36px; }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .site-footer { padding: 50px 40px 0 40px; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+}
+
+@media (max-width: 600px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+    .footer-brand p { max-width: none; }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — Sip & Chill</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site-extra.css">
+</head>
+<body id="pageBody" class="menu-page">
+
+    <canvas id="snowCanvas"></canvas>
+
+    <header>
+        <div class="logo">🥤 Sip & Chill</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="menu.html" class="dropdown-trigger">Menu</a>
+                <div class="dropdown-menu">
+                    <a href="milkshake.html">Milkshake</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="about.html" class="dropdown-trigger">About</a>
+                <div class="dropdown-menu">
+                    <a href="about.html#about-us">About Us</a>
+                    <a href="about.html#team">Team</a>
+                    <a href="about.html#restaurant">Restaurant</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="vlog.html" class="dropdown-trigger">Vlog</a>
+                <div class="dropdown-menu">
+                    <a href="vlog.html#pictures">Pictures</a>
+                    <a href="vlog.html#videos">Videos</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+            <a href="checkout.html" class="cart-link" aria-label="View cart">
+                🛒 Cart<span id="cartBadge" class="cart-badge">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="page-wrap">
+
+        <div class="page-header">
+            <span class="tag">Our Story</span>
+            <h1>About Sip & Chill</h1>
+            <p class="lead">A little milkshake stand built on a big love for cold, creamy, made-to-order drinks. Here's who we are and what we stand for.</p>
+        </div>
+
+        <section id="about-us" class="about-grid">
+            <div>
+                <h2>How We Started</h2>
+                <p>Sip & Chill started as a small weekend stand with one blender, a handful of flavours, and a simple goal: make the best milkshake in the neighbourhood. Word spread fast, and today we serve handcrafted shakes made fresh, to order, with real ingredients — never pre-mixed, never rushed.</p>
+                <p>Every cup is blended after you order it, so what you get is always cold, thick, and made just for you.</p>
+            </div>
+            <img src="01a66366-f522-42b0-b220-97939b93997a.png" alt="Sip & Chill milkshake stand">
+        </section>
+
+        <section id="restaurant" class="about-grid">
+            <img src="12cbc5cf-42d5-458f-8352-f426bf2fd72c.png" alt="Sip & Chill store front">
+            <div>
+                <h2>Our Stand</h2>
+                <p>You'll find us at <strong>51 Peulwane Street, Midrand</strong> — come say hi, grab a shake, and watch it blended fresh right in front of you.</p>
+                <p>Prefer to skip the queue? Order ahead through our <a href="menu.html" style="color:#ffffff; text-decoration:underline;">menu</a> and we'll have it ready, or send us a message on WhatsApp and we'll sort you out.</p>
+                <a href="contact.html" class="btn-outline">Get Directions</a>
+            </div>
+        </section>
+
+        <section id="team" class="panel" style="scroll-margin-top:110px;">
+            <h2 class="section-heading" style="text-align:center;">Meet The Team</h2>
+            <p style="text-align:center; max-width:560px; margin:0 auto;">The hands behind every shake — friendly faces, fast blenders, and a genuine love for what we do.</p>
+            <div class="team-grid">
+                <div class="team-card panel">
+                    <img src="5e463613-4523-4b62-b540-04b1b1f0ff22.png" alt="Founder">
+                    <h4>Angela</h4>
+                    <span>Founder & Head Blender</span>
+                    <p>The face behind Sip & Chill — mixing every flavour with care since day one.</p>
+                </div>
+                <div class="team-card panel">
+                    <img src="94020d5e-4a31-4cbc-add7-781ab2372447.png" alt="Team member">
+                    <h4>The Crew</h4>
+                    <span>Front of Stand</span>
+                    <p>The friendly faces who take your order and make sure every visit is a good one.</p>
+                </div>
+                <div class="team-card panel">
+                    <img src="a2a972d3-b654-49a9-8051-a00a4e624a55.png" alt="Team member">
+                    <h4>Quality & Recipes</h4>
+                    <span>Flavour Development</span>
+                    <p>Always testing new flavours so there's something new to try every season.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sip & Chill — Premium Drinks Experience</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <div id="cartToast" class="cart-toast"></div>
+    <a class="whatsapp-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 32 32" fill="#ffffff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.607 1.912 6.472L4 29l7.727-1.877A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.363l-.358-.213-4.586 1.114 1.13-4.47-.234-.367A9.78 9.78 0 0 1 6.182 15c0-5.417 4.402-9.818 9.819-9.818S25.818 9.583 25.818 15 21.418 24.818 16.001 24.818zm5.4-7.34c-.296-.148-1.75-.864-2.022-.963-.271-.099-.469-.148-.667.148-.198.297-.767.963-.94 1.161-.173.198-.346.223-.642.075-.296-.148-1.249-.46-2.379-1.468-.879-.784-1.472-1.752-1.645-2.049-.173-.297-.018-.457.13-.605.134-.133.297-.346.445-.52.148-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51-.173-.008-.371-.01-.569-.01a1.09 1.09 0 0 0-.792.371c-.272.297-1.04 1.016-1.04 2.476s1.065 2.872 1.213 3.07c.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.695.626.712.227 1.36.195 1.873.118.571-.085 1.75-.716 1.997-1.408.247-.692.247-1.285.173-1.408-.074-.124-.272-.198-.568-.346z"/></svg>
+    </a>
+    <script>
+        document.getElementById('waFloat').href = whatsappGeneralLink();
+    </script>
+
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let sw = canvas.width = window.innerWidth;
+        let sh = canvas.height = window.innerHeight;
+        const totalStars = 45;
+        const starsArray = [];
+
+        window.addEventListener('resize', () => {
+            sw = canvas.width = window.innerWidth;
+            sh = canvas.height = window.innerHeight;
+        });
+
+        for (let i = 0; i < totalStars; i++) {
+            starsArray.push({
+                x: Math.random() * sw,
+                y: Math.random() * sh,
+                outerRadius: Math.random() * 6 + 4,
+                innerRadius: Math.random() * 2 + 1,
+                points: i % 2 === 0 ? 4 : 6,
+                speedY: Math.random() * 0.8 + 0.4,
+                opacity: Math.random() * 0.5 + 0.2,
+                swingSpeed: Math.random() * 0.02,
+                swingRange: Math.random() * 0.8
+            });
+        }
+
+        function drawIceStar(cx, cy, spikes, outerRadius, innerRadius, alpha) {
+            let rot = Math.PI / 2 * 3;
+            let x = cx;
+            let y = cy;
+            let step = Math.PI / spikes;
+
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - outerRadius);
+
+            for (let i = 0; i < spikes; i++) {
+                x = cx + Math.cos(rot) * outerRadius;
+                y = cy + Math.sin(rot) * outerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+
+                x = cx + Math.cos(rot) * innerRadius;
+                y = cy + Math.sin(rot) * innerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+            }
+
+            ctx.lineTo(cx, cy - outerRadius);
+            ctx.closePath();
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            ctx.fill();
+        }
+
+        let runAngle = 0;
+        function renderIceSnow() {
+            ctx.clearRect(0, 0, sw, sh);
+            runAngle += 0.005;
+
+            for (let i = 0; i < totalStars; i++) {
+                const s = starsArray[i];
+                drawIceStar(s.x, s.y, s.points, s.outerRadius, s.innerRadius, s.opacity);
+                s.y += s.speedY;
+                s.x += Math.sin(runAngle + s.swingRange) * 0.3;
+
+                if (s.y > sh) {
+                    starsArray[i] = {
+                        x: Math.random() * sw,
+                        y: -15,
+                        outerRadius: s.outerRadius,
+                        innerRadius: s.innerRadius,
+                        points: s.points,
+                        speedY: s.speedY,
+                        opacity: s.opacity,
+                        swingSpeed: s.swingSpeed,
+                        swingRange: s.swingRange
+                    };
+                }
+            }
+            requestAnimationFrame(renderIceSnow);
+        }
+        renderIceSnow();
+    </script>
+</body>
+</html>

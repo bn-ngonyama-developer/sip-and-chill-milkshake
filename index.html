@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home — Premium Experience</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site-extra.css">
+    
+    <style>
+        #drinkTitle, #dynamicFruit {
+            transition: opacity 0.4s ease-in-out;
+        }
+        .carousel-track {
+            will-change: transform;
+        }
+    </style>
+</head>
+<body id="pageBody">
+
+    <canvas id="snowCanvas"></canvas>
+
+    <header>
+        <div class="logo">🥤 Sip & Chill</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="menu.html" class="dropdown-trigger">Menu</a>
+                <div class="dropdown-menu">
+                    <a href="milkshake.html">Milkshake</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="about.html" class="dropdown-trigger">About</a>
+                <div class="dropdown-menu">
+                    <a href="about.html#about-us">About Us</a>
+                    <a href="about.html#team">Team</a>
+                    <a href="about.html#restaurant">Restaurant</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="vlog.html" class="dropdown-trigger">Vlog</a>
+                <div class="dropdown-menu">
+                    <a href="vlog.html#pictures">Pictures</a>
+                    <a href="vlog.html#videos">Videos</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+            <a href="checkout.html" class="cart-link" aria-label="View cart">
+                🛒 Cart<span id="cartBadge" class="cart-badge">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            
+            <div class="hero-text">
+                <span class="tag" id="drinkTag">Premium Organic Drinks</span>
+                <h1 id="drinkTitle">Chocolate Milkshake</h1>
+                
+                <img src="6a33569c56fd6e99800c6adb2b6fc2e6.png" class="anchored-text-fruit" id="dynamicFruit" alt="Ingredient">
+                
+                <p id="drinkDesc">
+                    Fresh shake drinks blended with rich flavors, creamy textures, and premium ingredients.
+                </p>
+                <a class="btn" id="actionBtn" href="menu.html" style="text-decoration:none; display:inline-block;">Order Now</a>
+            </div>
+
+            <div class="hero-image-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <img src="78835-jukebox-bg-removed.png" class="hero-image" alt="Chocolate Milkshake">
+                        <img src="IMG-20260725-WA0013.png" class="hero-image" alt="Peppermint Milkshake">
+                        <img src="RASBERRY.png" class="hero-image" alt="Raspberry Milkshake">
+                        <img src="ChatGPT Image Jul 13, 2026, 07_07_47 PM (1).png" class="hero-image" alt="Caramel Milkshake">
+                        <img src="IMG-20260725-WA0012.png" class="hero-image" alt="Strawberry Milkshake">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="reviews-header">
+            <span class="section-eyebrow">Loved by Regulars</span>
+            <h2>What Sip &amp; Chill regulars are saying</h2>
+        </div>
+        <div class="reviews-grid">
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="review-quote">The Caramel Milkshake is stupidly good. Thick, not too sweet, and it actually tastes like real caramel.</p>
+                <div class="review-author">
+                    <span class="review-name">Lyndal M.</span>
+                    <span class="review-order">Usual order: Caramel Milkshake</span>
+                </div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="review-quote">Ordered on WhatsApp and it was ready before I even finished parking. Fast, friendly, and ice cold.</p>
+                <div class="review-author">
+                    <span class="review-name">Nqobile N.</span>
+                    <span class="review-order">Usual order: Chocolate Milkshake</span>
+                </div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="4 out of 5 stars">★★★★☆</div>
+                <p class="review-quote">Peppermint one is my go-to after gym. Feels fresh instead of heavy, which is rare for a milkshake.</p>
+                <div class="review-author">
+                    <span class="review-name">Nkosinathi B.</span>
+                    <span class="review-order">Usual order: Peppermint Milkshake</span>
+                </div>
+            </article>
+            <article class="review-card">
+                <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p class="review-quote">Brought the kids for the strawberry shake and ended up staying for the vlog wall of pictures. Great little spot.</p>
+                <div class="review-author">
+                    <span class="review-name">Angela M.</span>
+                    <span class="review-order">Usual order: Strawberry Milkshake</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">🥤 Sip & Chill</div>
+                <p>Small-batch milkshakes, blended fresh daily with real fruit, real cream, and no shortcuts.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 2.2.25 3.02.6a5.98 5.98 0 0 1 2.15 1.4 5.98 5.98 0 0 1 1.4 2.15c.35.83.55 1.85.6 3.02.07 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 2.2-.6 3.02a5.98 5.98 0 0 1-1.4 2.15 5.98 5.98 0 0 1-2.15 1.4c-.83.35-1.85.55-3.02.6-1.25.07-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-2.2-.25-3.02-.6a5.98 5.98 0 0 1-2.15-1.4 5.98 5.98 0 0 1-1.4-2.15c-.35-.83-.55-1.85-.6-3.02C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-2.2.6-3.02a5.98 5.98 0 0 1 1.4-2.15 5.98 5.98 0 0 1 2.15-1.4c.83-.35 1.85-.55 3.02-.6C8.4 2.2 8.8 2.2 12 2.2zm0 3.4a6.4 6.4 0 1 0 0 12.8 6.4 6.4 0 0 0 0-12.8zm0 10.55a4.15 4.15 0 1 1 0-8.3 4.15 4.15 0 0 1 0 8.3zm6.65-10.8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7c-.28-.04-1.25-.12-2.37-.12-2.35 0-3.96 1.43-3.96 4.06V9.9H7.6V13h2.77v8h3.13z"/></svg>
+                    </a>
+                    <a href="#" id="footerWaLink" aria-label="Chat with us on WhatsApp">
+                        <svg viewBox="0 0 32 32"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.607 1.912 6.472L4 29l7.727-1.877A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.363l-.358-.213-4.586 1.114 1.13-4.47-.234-.367A9.78 9.78 0 0 1 6.182 15c0-5.417 4.402-9.818 9.819-9.818S25.818 9.583 25.818 15 21.418 24.818 16.001 24.818z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="vlog.html">Vlog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-visit">
+                <h3>Visit Us</h3>
+                <p>1989 Mayibuye ext 34, Midrand</p>
+                <p>Mon – Sat: 9am – 8pm</p>
+                <p>Sunday: 10am – 6pm</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <p><a href="tel:+27674845944">+27 67 484 5944</a></p>
+                <p><a href="mailto:hello@sipandchill.co.za">hello@sipandchill.co.za</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sip & Chill — Premium Drinks Experience</p>
+        </div>
+    </footer>
+
+    <script>
+        const slidesData = [
+            { 
+                title: "Chocolate Milkshake", 
+                bg: "linear-gradient(135deg, #261611 0%, #52372E 45%, #FDF9F7 100%)", 
+                tagColor: "#361D15", btnBg: "#52372E", btnHover: "#261611",
+                fruitImg: "6a33569c56fd6e99800c6adb2b6fc2e6.png",
+                footerBg: "#261611"
+            },
+            { 
+                title: "Peppermint Milkshake", 
+                bg: "linear-gradient(135deg, #1C3322 0%, #4D7A57 45%, #F4FAF6 100%)", 
+                tagColor: "#2A4733", btnBg: "#4D7A57", btnHover: "#1C3322",
+                fruitImg: "f5ce65a13a13468863b96488783cffc0.png",
+                footerBg: "#1C3322"
+            },
+            { 
+                title: "Raspberry Milkshake", 
+                bg: "linear-gradient(135deg, #3A141C 0%, #B8435A 45%, #FAF4F5 100%)", 
+                tagColor: "#611E2B", btnBg: "#B8435A", btnHover: "#3A141C",
+                fruitImg: "f16892cc6264709394391dd72fe81846.png",
+                footerBg: "#3A141C"
+            },
+            { 
+                title: "Caramel Milkshake", 
+                bg: "linear-gradient(135deg, #2B1B17 0%, #C68E5A 45%, #FDFBF7 100%)", 
+                tagColor: "#5C4033", btnBg: "#C68E5A", btnHover: "#2B1B17",
+                fruitImg: "ChatGPT Image Jul 16, 2026, 09_37_20 AM.png",
+                footerBg: "#2B1B17"
+            },
+            { 
+                title: "Strawberry Milkshake", 
+                bg: "linear-gradient(135deg, #3B1617 0%, #CC4E51 45%, #FAF4F4 100%)", 
+                tagColor: "#702528", btnBg: "#CC4E51", btnHover: "#3B1617",
+                fruitImg: "4441584c95a505aa32af278fbd1ccec2.png",
+                footerBg: "#3B1617"
+            }
+        ];
+
+        const body = document.getElementById('pageBody');
+        const track = document.getElementById('carouselTrack');
+        const title = document.getElementById('drinkTitle');
+        const tag = document.getElementById('drinkTag');
+        const actionBtn = document.getElementById('actionBtn');
+        const dynamicFruit = document.getElementById('dynamicFruit');
+        const siteFooter = document.querySelector('.site-footer');
+
+        // Clone first image for smooth loop reset
+        if (track && track.firstElementChild) {
+            const firstImageClone = track.firstElementChild.cloneNode(true);
+            track.appendChild(firstImageClone);
+        }
+
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        applyColors(0);
+
+        function applyColors(index) {
+            const colorIndex = index % slidesData.length;
+            const data = slidesData[colorIndex];
+
+            body.style.background = data.bg;
+            if (tag) tag.style.backgroundColor = data.tagColor;
+            if (siteFooter) siteFooter.style.backgroundColor = data.footerBg;
+
+            if (actionBtn) {
+                actionBtn.style.backgroundColor = data.btnBg;
+                actionBtn.onmouseenter = () => actionBtn.style.backgroundColor = data.btnHover;
+                actionBtn.onmouseleave = () => actionBtn.style.backgroundColor = data.btnBg;
+            }
+
+            if (title) title.style.opacity = 0;
+            if (dynamicFruit) dynamicFruit.style.opacity = 0;
+
+            setTimeout(() => {
+                if (title) {
+                    title.textContent = data.title;
+                    title.style.opacity = 1;
+                }
+                if (dynamicFruit) {
+                    dynamicFruit.src = data.fruitImg;
+                    dynamicFruit.style.opacity = 1;
+                }
+            }, 300);
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            currentIndex++;
+
+            track.style.transition = "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+            track.style.transform = `translateY(-${currentIndex * 100}%)`;
+
+            applyColors(currentIndex);
+
+            if (currentIndex === slidesData.length) {
+                isTransitioning = true;
+                setTimeout(() => {
+                    track.style.transition = "none";
+                    currentIndex = 0;
+                    track.style.transform = `translateY(0%)`;
+                    isTransitioning = false;
+                }, 800);
+            }
+        }
+
+        setInterval(nextSlide, 4000);
+
+        // ==========================================================================
+        // GEOMETRIC ICE STAR SNOW ENGINE (FIXED)
+        // ==========================================================================
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let sw = canvas.width = window.innerWidth;
+        let sh = canvas.height = window.innerHeight;
+        const totalStars = 45; 
+        const starsArray = [];
+
+        window.addEventListener('resize', () => {
+            sw = canvas.width = window.innerWidth;
+            sh = canvas.height = window.innerHeight;
+        });
+
+        for (let i = 0; i < totalStars; i++) {
+            starsArray.push({
+                x: Math.random() * sw,
+                y: Math.random() * sh,
+                outerRadius: Math.random() * 6 + 4,  
+                innerRadius: Math.random() * 2 + 1,  
+                points: i % 2 === 0 ? 4 : 6,         
+                speedY: Math.random() * 0.8 + 0.4,   
+                opacity: Math.random() * 0.5 + 0.2,  
+                swingSpeed: Math.random() * 0.02,
+                swingRange: Math.random() * 0.8
+            });
+        }
+
+        function drawIceStar(cx, cy, spikes, outerRadius, innerRadius, alpha) {
+            let rot = (Math.PI / 2) * 3;
+            let step = Math.PI / spikes;
+
+            ctx.beginPath();
+            for (let i = 0; i < spikes; i++) {
+                let x = cx + Math.cos(rot) * outerRadius;
+                let y = cy + Math.sin(rot) * outerRadius;
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+                rot += step;
+
+                x = cx + Math.cos(rot) * innerRadius;
+                y = cy + Math.sin(rot) * innerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+            }
+            
+            ctx.closePath();
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            ctx.fill();
+        }
+
+        let runAngle = 0;
+        function renderIceSnow() {
+            ctx.clearRect(0, 0, sw, sh);
+            runAngle += 0.005;
+
+            for (let i = 0; i < totalStars; i++) {
+                const s = starsArray[i];
+                s.y += s.speedY;
+                if (s.y > sh + s.outerRadius) {
+                    s.y = -s.outerRadius;
+                    s.x = Math.random() * sw;
+                }
+                const swingOffset = Math.sin(runAngle * s.swingSpeed) * s.swingRange * 50;
+                drawIceStar(s.x + swingOffset, s.y, s.points, s.outerRadius, s.innerRadius, s.opacity);
+            }
+
+            requestAnimationFrame(renderIceSnow);
+        }
+        renderIceSnow();
+    </script>
+    <script src="cart.js"></script>
+
+    <!-- Floating quick-order WhatsApp button -->
+    <a class="whatsapp-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg viewBox="0 0 32 32" fill="#ffffff"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.703 4.607 1.912 6.472L4 29l7.727-1.877A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.78 9.78 0 0 1-4.99-1.363l-.358-.213-4.586 1.114 1.13-4.47-.234-.367A9.78 9.78 0 0 1 6.182 15c0-5.417 4.402-9.818 9.819-9.818S25.818 9.583 25.818 15 21.418 24.818 16.001 24.818zm5.4-7.34c-.296-.148-1.75-.864-2.022-.963-.271-.099-.469-.148-.667.148-.198.297-.767.963-.94 1.161-.173.198-.346.223-.642.075-.296-.148-1.249-.46-2.379-1.468-.879-.784-1.472-1.752-1.645-2.049-.173-.297-.018-.457.13-.605.134-.133.297-.346.445-.52.148-.173.198-.297.297-.495.099-.198.05-.372-.025-.52-.074-.148-.667-1.608-.914-2.202-.24-.578-.485-.5-.667-.51-.173-.008-.371-.01-.569-.01a1.09 1.09 0 0 0-.792.371c-.272.297-1.04 1.016-1.04 2.476s1.065 2.872 1.213 3.07c.148.198 2.096 3.2 5.08 4.489.71.306 1.263.489 1.695.626.712.227 1.36.195 1.873.118.571-.085 1.75-.716 1.997-1.408.247-.692.247-1.285.173-1.408-.074-.124-.272-.198-.568-.346z"/></svg>
+    </a>
+    <div id="cartToast" class="cart-toast"></div>
+
+    <script>
+        // Safe check for external function defined in cart.js
+        if (typeof whatsappGeneralLink === 'function') {
+            const link = whatsappGeneralLink();
+            const waFloat = document.getElementById('waFloat');
+            const footerWaLink = document.getElementById('footerWaLink');
+            
+            if (waFloat) waFloat.href = link;
+            if (footerWaLink) {
+                footerWaLink.href = link;
+                footerWaLink.target = '_blank';
+                footerWaLink.rel = 'noopener';
+            }
+        }
+    </script>
+</body>
+</html>

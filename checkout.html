@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout — Sip & Chill</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site-extra.css">
+</head>
+<body id="pageBody" class="menu-page">
+
+    <canvas id="snowCanvas"></canvas>
+
+    <header>
+        <div class="logo">🥤 Sip & Chill</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="menu.html" class="dropdown-trigger">Menu</a>
+                <div class="dropdown-menu">
+                    <a href="milkshake.html">Milkshake</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="about.html" class="dropdown-trigger">About</a>
+                <div class="dropdown-menu">
+                    <a href="about.html#about-us">About Us</a>
+                    <a href="about.html#team">Team</a>
+                    <a href="about.html#restaurant">Restaurant</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="vlog.html" class="dropdown-trigger">Vlog</a>
+                <div class="dropdown-menu">
+                    <a href="vlog.html#pictures">Pictures</a>
+                    <a href="vlog.html#videos">Videos</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+            <a href="checkout.html" class="cart-link" aria-label="View cart">
+                🛒 Cart<span id="cartBadge" class="cart-badge">0</span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="page-wrap">
+
+        <div class="page-header">
+            <span class="tag">Almost There</span>
+            <h1>Checkout</h1>
+            <p class="lead">Review your order, tell us where to reach you, and send it straight to us on WhatsApp — we'll also email you your order number.</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="panel">
+                <h2 class="section-heading">Your Order</h2>
+                <div id="cartContent"></div>
+            </div>
+
+            <div class="panel">
+                <h2 class="section-heading">Your Details</h2>
+                <form id="orderForm" action="https://formsubmit.co/blessingport47@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" id="fSubject" value="New Sip & Chill Order">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_autoresponse" id="fAutoresponse" value="">
+                    <input type="hidden" name="_next" value="order-confirmation.html">
+                    <input type="hidden" name="Order Number" id="fOrderNumber" value="">
+                    <input type="hidden" name="Order Summary" id="fOrderSummary" value="">
+
+                    <div class="form-field">
+                        <label for="oName">Full Name</label>
+                        <input type="text" id="oName" name="Name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="oPhone">Phone Number</label>
+                            <input type="tel" id="oPhone" name="Phone" placeholder="0XX XXX XXXX" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="oEmail">Email (for your order number)</label>
+                            <input type="email" id="oEmail" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="oMethod">Pickup or Delivery?</label>
+                        <select id="oMethod" name="Fulfilment">
+                            <option value="Pickup at 51 Peulwane Street, Midrand">Pickup — 51 Peulwane Street, Midrand</option>
+                            <option value="Delivery">Delivery</option>
+                        </select>
+                    </div>
+                    <div class="form-field" id="addressField" style="display:none;">
+                        <label for="oAddress">Delivery Address</label>
+                        <input type="text" id="oAddress" name="Delivery Address" placeholder="Street, suburb, city">
+                    </div>
+                    <div class="form-field">
+                        <label for="oNotes">Notes (optional)</label>
+                        <textarea id="oNotes" name="Notes" rows="3" placeholder="Any special requests?"></textarea>
+                    </div>
+
+                    <button type="submit" id="placeOrderBtn" class="btn-whatsapp" style="width:100%; margin-top:6px;">
+                        ✅ Place Order via WhatsApp
+                    </button>
+                    <p style="font-size:13px; opacity:0.75; margin-top:12px; text-align:center;">
+                        This opens WhatsApp with your order ready to send, and emails your order number to you.
+                    </p>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sip & Chill — Premium Drinks Experience</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <div id="cartToast" class="cart-toast"></div>
+
+    <script>
+        const methodSelect = document.getElementById('oMethod');
+        const addressField = document.getElementById('addressField');
+        methodSelect.addEventListener('change', () => {
+            addressField.style.display = methodSelect.value === 'Delivery' ? 'block' : 'none';
+            document.getElementById('oAddress').required = methodSelect.value === 'Delivery';
+        });
+
+        function renderCart() {
+            const cart = getCart();
+            const container = document.getElementById('cartContent');
+            const placeBtn = document.getElementById('placeOrderBtn');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-cart">
+                        <p style="font-size:40px;">🥤</p>
+                        <p>Your order is empty.</p>
+                        <p><a href="menu.html">Browse the menu</a> to add some milkshakes.</p>
+                    </div>`;
+                placeBtn.disabled = true;
+                placeBtn.style.opacity = 0.5;
+                placeBtn.style.cursor = 'not-allowed';
+                return;
+            }
+
+            placeBtn.disabled = false;
+            placeBtn.style.opacity = 1;
+            placeBtn.style.cursor = 'pointer';
+
+            let rows = cart.map(item => `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>
+                        <div class="qty-control">
+                            <button type="button" onclick="changeQty('${item.name.replace(/'/g, "\\'")}', -1)">−</button>
+                            <span>${item.qty}</span>
+                            <button type="button" onclick="changeQty('${item.name.replace(/'/g, "\\'")}', 1)">+</button>
+                        </div>
+                    </td>
+                    <td>R${(item.price * item.qty).toFixed(2)}</td>
+                    <td><button type="button" class="remove-link" onclick="removeItem('${item.name.replace(/'/g, "\\'")}')">Remove</button></td>
+                </tr>`).join('');
+
+            container.innerHTML = `
+                <table class="cart-table">
+                    <thead>
+                        <tr><th>Item</th><th>Qty</th><th>Price</th><th></th></tr>
+                    </thead>
+                    <tbody>${rows}</tbody>
+                </table>
+                <div class="cart-total-row">
+                    <span>Total</span>
+                    <span>R${cartTotal(cart).toFixed(2)}</span>
+                </div>`;
+        }
+
+        function changeQty(name, delta) {
+            const cart = getCart();
+            const item = cart.find(i => i.name === name);
+            if (!item) return;
+            if (item.qty + delta <= 0) {
+                removeItem(name);
+                return;
+            }
+            setQty(name, item.qty + delta);
+            renderCart();
+        }
+
+        function removeItem(name) {
+            removeFromCart(name);
+            renderCart();
+        }
+
+        renderCart();
+
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            const cart = getCart();
+            if (cart.length === 0) {
+                e.preventDefault();
+                alert('Please add at least one item to your order first.');
+                return;
+            }
+
+            const customer = {
+                name: document.getElementById('oName').value,
+                phone: document.getElementById('oPhone').value,
+                email: document.getElementById('oEmail').value,
+                method: methodSelect.value,
+                address: document.getElementById('oAddress').value,
+                notes: document.getElementById('oNotes').value
+            };
+
+            const orderNumber = generateOrderNumber();
+            const summaryText = buildOrderSummaryText(cart, orderNumber, customer);
+
+            // Fill hidden fields for the email to the shop
+            document.getElementById('fSubject').value = `New Sip & Chill Order — ${orderNumber}`;
+            document.getElementById('fOrderNumber').value = orderNumber;
+            document.getElementById('fOrderSummary').value = summaryText;
+
+            // Autoresponse email sent to the customer with their order number
+            document.getElementById('fAutoresponse').value =
+                `Hi ${customer.name}, thanks for your order from Sip & Chill!\n\n` +
+                `Your order number is: ${orderNumber}\n\n` +
+                summaryText +
+                `\n\nWe'll be in touch on WhatsApp shortly to confirm. See you soon!`;
+
+            // Save order locally so the confirmation page can show it even before email arrives
+            localStorage.setItem(LAST_ORDER_KEY, JSON.stringify({ orderNumber, summaryText, customer }));
+
+            // Open WhatsApp with the order pre-filled
+            window.open(whatsappOrderLink(cart, orderNumber, customer), '_blank');
+
+            // Clear the cart — the form will now submit and redirect to the confirmation page
+            localStorage.removeItem(CART_KEY);
+        });
+    </script>
+
+    <script>
+        const canvas = document.getElementById('snowCanvas');
+        const ctx = canvas.getContext('2d');
+        let sw = canvas.width = window.innerWidth;
+        let sh = canvas.height = window.innerHeight;
+        const totalStars = 45;
+        const starsArray = [];
+
+        window.addEventListener('resize', () => {
+            sw = canvas.width = window.innerWidth;
+            sh = canvas.height = window.innerHeight;
+        });
+
+        for (let i = 0; i < totalStars; i++) {
+            starsArray.push({
+                x: Math.random() * sw,
+                y: Math.random() * sh,
+                outerRadius: Math.random() * 6 + 4,
+                innerRadius: Math.random() * 2 + 1,
+                points: i % 2 === 0 ? 4 : 6,
+                speedY: Math.random() * 0.8 + 0.4,
+                opacity: Math.random() * 0.5 + 0.2,
+                swingSpeed: Math.random() * 0.02,
+                swingRange: Math.random() * 0.8
+            });
+        }
+
+        function drawIceStar(cx, cy, spikes, outerRadius, innerRadius, alpha) {
+            let rot = Math.PI / 2 * 3;
+            let x = cx;
+            let y = cy;
+            let step = Math.PI / spikes;
+
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - outerRadius);
+
+            for (let i = 0; i < spikes; i++) {
+                x = cx + Math.cos(rot) * outerRadius;
+                y = cy + Math.sin(rot) * outerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+
+                x = cx + Math.cos(rot) * innerRadius;
+                y = cy + Math.sin(rot) * innerRadius;
+                ctx.lineTo(x, y);
+                rot += step;
+            }
+
+            ctx.lineTo(cx, cy - outerRadius);
+            ctx.closePath();
+            ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+            ctx.fill();
+        }
+
+        let runAngle = 0;
+        function renderIceSnow() {
+            ctx.clearRect(0, 0, sw, sh);
+            runAngle += 0.005;
+
+            for (let i = 0; i < totalStars; i++) {
+                const s = starsArray[i];
+                drawIceStar(s.x, s.y, s.points, s.outerRadius, s.innerRadius, s.opacity);
+                s.y += s.speedY;
+                s.x += Math.sin(runAngle + s.swingRange) * 0.3;
+
+                if (s.y > sh) {
+                    starsArray[i] = {
+                        x: Math.random() * sw,
+                        y: -15,
+                        outerRadius: s.outerRadius,
+                        innerRadius: s.innerRadius,
+                        points: s.points,
+                        speedY: s.speedY,
+                        opacity: s.opacity,
+                        swingSpeed: s.swingSpeed,
+                        swingRange: s.swingRange
+                    };
+                }
+            }
+            requestAnimationFrame(renderIceSnow);
+        }
+        renderIceSnow();
+    </script>
+</body>
+</html>
